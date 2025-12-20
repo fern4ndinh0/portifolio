@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Tech | Fernando Dias</title>
-    <link rel="icon" type="image/png" href="Logo Fernando.png">
+    <link rel="icon" type="image/png" href="Logo Fernando.png"> 
     <meta name="description" content="Transformando informações em soluções digitais de impacto para negócios.">
     <meta name="keywords" content="Dev, desenvolvedor, sites institucionais, Tech, Analista de sistemas, Fernando Dias, FD Tech, soluções digitais">
     
@@ -15,7 +15,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <script src="https://unpkg.com/lucide-react@0.395.0/dist/umd/lucide-react.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
 
 
@@ -27,6 +26,7 @@
         }
         .hero-bg {
             background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.9)), url('bgtech1.jpg') no-repeat center center/cover;
+            background-color: #0a0a0a; 
         }
         .section-title {
             @apply text-3xl md:text-4xl font-bold text-center mb-12 relative;
@@ -38,9 +38,16 @@
         .modal-backdrop {
             @apply fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 transition-opacity duration-300;
         }
+
+        .project-card:hover .project-overlay {
+            transform: translateY(0);
+        }
+        .project-card:hover img {
+            transform: scale(1.1);
+        }
     </style>
 </head>
-<body class="antialiased">
+<body class="antialiased selection:bg-purple-500 selection:text-white">
 
     <header id="header" class="fixed top-0 left-0 right-0 z-40 bg-black bg-opacity-50 backdrop-blur-md transition-all duration-300">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -56,8 +63,7 @@
                 <a href="#portfolio" class="hover:text-purple-500 transition-colors">Portfólio</a>
                 <a href="#sobre" class="hover:text-purple-500 transition-colors">Sobre</a>
                 <a href="#servicos" class="hover:text-purple-500 transition-colors">Serviços</a>
-                <a href="#depoimentos" class="hover:text-purple-500 transition-colors">Depoimentos</a>
-                <a href="#contato" class="bg-purple-500 px-4 py-2 rounded-md hover:bg-purple-600 transition-colors font-semibold">Fale Comigo</a>
+                <a href="#contato" class="bg-purple-600 px-5 py-2.5 rounded-full hover:bg-purple-700 transition-all hover:shadow-[0_0_20px_rgba(147,51,234,0.3)]">Fale Comigo</a>
             </nav>
         </div>
         <div id="mobile-menu" class="hidden md:hidden">
@@ -65,53 +71,126 @@
                 <a href="#portfolio" class="hover:text-purple-500 transition-colors">Portfólio</a>
                 <a href="#sobre" class="hover:text-purple-500 transition-colors">Sobre</a>
                 <a href="#servicos" class="hover:text-purple-500 transition-colors">Serviços</a>
-                <a href="#depoimentos" class="hover:text-purple-500 transition-colors">Depoimentos</a>
-                <a href="#contato" class="bg-purple-500 w-1/2 text-center px-4 py-2 rounded-md hover:bg-purple-600 transition-colors font-semibold">Fale Comigo</a>
+                <a href="#contato" class="bg-purple-600 text-white px-8 py-3 rounded-full font-semibold">Fale Comigo</a>
             </nav>
         </div>
     </header>
 
     <main>
-        <section id="home" class="min-h-screen flex items-center justify-center hero-bg">
-            <div class="text-center flex flex-col">
-                <h1 class="text-4xl md:text-6xl font-bold tracking-tight">Fernando Dias</h1>
-                <p class="text-xl md:text-2xl mt-2 text-gray-300">Inovação a um clique!</p>
-                <a href="#portfolio" class="mt-8 inline-block bg-white text-black px-8 py-3 rounded-md font-semibold hover:bg-gray-200 transition-transform hover:scale-105">Conheça meu trabalho</a>
+        <section id="home" class="min-h-screen flex items-center justify-center hero-bg relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-[#111111]"></div>
+            
+            <div class="text-center flex flex-col items-center relative z-10 px-4">
+                <div class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-purple-400 uppercase bg-purple-500/10 rounded-full border border-purple-500/20">
+                    Desenvolvimento & Inovação
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-4 bg-clip-text">
+                    Fernando Dias
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-400 max-w-2xl font-light">
+                    Transformando ideias em <span class="text-purple-400 font-normal">soluções digitais</span> de alto impacto.
+                </p>
+                <div class="mt-10 flex gap-4">
+                    <a href="#portfolio" class="bg-white text-black px-8 py-3.5 rounded-lg font-bold hover:bg-gray-200 transition-all hover:scale-105 flex items-center gap-2">
+                        Ver Projetos <i data-lucide="arrow-down" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#contato" class="border border-white/20 text-white px-8 py-3.5 rounded-lg font-semibold hover:bg-white/10 transition-all">
+                        Contato
+                    </a>
+                </div>
             </div>
         </section>
 
-        <section id="portfolio" class="py-20 bg-[#111111]">
+        <section id="portfolio" class="py-24 bg-[#111111] relative">
             <div class="container mx-auto px-6">
-                <h3 class="text-2xl font-semibold text-center text-white mb-10">Alguns trabalhos...</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-                    <div class="group relative rounded-lg overflow-hidden cursor-pointer" onclick="openModal('Demo via trajeto.mp4')">
-                        <img src="ThumbVT.png" alt="Thumbnail do Vídeo 1" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex flex-col items-center justify-center text-center p-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                              <circle cx="12" cy="12" r="10"></circle>
-                              <polygon points="10 8 16 12 10 16 10 8"></polygon>
-                            </svg>
-                        </div>
+                <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+                    <div>
+                        <h3 class="text-purple-500 font-semibold tracking-wide uppercase text-sm mb-2">Portfolio</h3>
+                        <h2 class="text-3xl md:text-4xl font-bold text-white">Trabalhos Recentes</h2>
                     </div>
 
-                    <div class="group relative rounded-lg overflow-hidden cursor-pointer" onclick="openModal('Recomeco site.mp4')">
-                        <img src="missaorecomeco.png" alt="Thumbnail do Vídeo 1" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex flex-col items-center justify-center text-center p-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                              <circle cx="12" cy="12" r="10"></circle>
-                              <polygon points="10 8 16 12 10 16 10 8"></polygon>
-                            </svg>
-                        </div>
-                    </div>
+                </div>
 
-                    <div class="group relative rounded-lg overflow-hidden cursor-pointer" onclick="openModal('Template.mp4')">
-                        <img src="ForSale.png" alt="Thumbnail do Vídeo 1" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex flex-col items-center justify-center text-center p-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                              <circle cx="12" cy="12" r="10"></circle>
-                              <polygon points="10 8 16 12 10 16 10 8"></polygon>
-                            </svg>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <a href="https://www.viatrajeto.com.br" target="_blank" class="group project-card block relative rounded-xl overflow-hidden cursor-pointer border border-white/10 bg-[#1a1a1a]">
+                        <div class="aspect-video w-full overflow-hidden relative">
+                            <img src="ThumbVT.png" alt="Via Trajeto" class="w-full h-full object-cover transition-transform duration-700 ease-out">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+                        </div>
+
+                        <div class="absolute top-4 left-4 z-20">
+                            <span class="px-3 py-1 text-xs font-medium bg-black/60 backdrop-blur-md border border-white/10 rounded-full text-white">
+                                Consultoria
+                            </span>
+                        </div>
+
+                        <div class="project-overlay absolute inset-0 bg-black/90 backdrop-blur-sm flex flex-col justify-end p-6 translate-y-full transition-transform duration-500 ease-in-out">
+                            <h4 class="text-xl font-bold text-white mb-1">Via Trajeto</h4>
+                            <p class="text-sm text-gray-400 mb-4 line-clamp-2">Site institucional para consultoria de carreiras e gestão de pessoas.</p>
+
+                            <button class="w-full py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-medium flex items-center justify-center gap-2 transition-colors">
+                                <i class="w-5 h-5"></i> Visite o Site
+                            </button>
+                        </div>
+
+                        <div class="absolute bottom-0 left-0 w-full p-6 transition-opacity duration-300 group-hover:opacity-0">
+                            <h4 class="text-lg font-semibold text-white">Via Trajeto</h4>
+                            <p class="text-sm text-purple-400">Clique para ver detalhes</p>
+                        </div>
+                    </a>
+
+                    <a href="https://fern4ndinh0.github.io/Projeto-Recomeco/" target="_blank" class="group project-card block relative rounded-xl overflow-hidden cursor-pointer border border-white/10 bg-[#1a1a1a]">
+                        <div class="aspect-video w-full overflow-hidden relative">
+                            <img src="missaorecomeco.png" alt="Missão Recomeço" class="w-full h-full object-cover transition-transform duration-700 ease-out">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+                        </div>
+
+                        <div class="absolute top-4 left-4 z-20">
+                            <span class="px-3 py-1 text-xs font-medium bg-black/60 backdrop-blur-md border border-white/10 rounded-full text-white">
+                                Institucional / Igreja
+                            </span>
+                        </div>
+
+                        <div class="project-overlay absolute inset-0 bg-black/90 backdrop-blur-sm flex flex-col justify-end p-6 translate-y-full transition-transform duration-500 ease-in-out">
+                            <h4 class="text-xl font-bold text-white mb-1">Missão Recomeço</h4>
+                            <p class="text-sm text-gray-400 mb-4 line-clamp-2">Site focado em espalhar a Palavara e o cuidado com os "pequeninos".</p>
+
+                            <button class="w-full py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-medium flex items-center justify-center gap-2 transition-colors">
+                                <i class="w-5 h-5"></i> Visite o Site
+                            </button>
+                        </div>
+
+                        <div class="absolute bottom-0 left-0 w-full p-6 transition-opacity duration-300 group-hover:opacity-0">
+                            <h4 class="text-lg font-semibold text-white">Missão Recomeço</h4>
+                            <p class="text-sm text-purple-400">Clique para ver detalhes</p>
+                        </div>
+                    </a>
+
+                    <div class="group project-card relative rounded-xl overflow-hidden cursor-pointer border border-white/10 bg-[#1a1a1a]" onclick="openModal('Template.mp4')">
+                        <div class="aspect-video w-full overflow-hidden relative">
+                            <img src="ForSale.png"  alt="Template For Sale" class="w-full h-full object-cover transition-transform duration-700 ease-out">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+                        </div>
+
+                        <div class="absolute top-4 left-4 z-20">
+                            <span class="px-3 py-1 text-xs font-medium bg-black/60 backdrop-blur-md border border-white/10 rounded-full text-white">
+                                Landing Page
+                            </span>
+                        </div>
+
+                        <div class="project-overlay absolute inset-0 bg-black/90 backdrop-blur-sm flex flex-col justify-end p-6 translate-y-full transition-transform duration-500 ease-in-out">
+                            <h4 class="text-xl font-bold text-white mb-1">Template a venda</h4>
+                            <p class="text-sm text-gray-400 mb-4 line-clamp-2">Landing page para empresas de prestação de serviços industriais/construção civil.</p>
+
+                            <button class="w-full py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-medium flex items-center justify-center gap-2 transition-colors">
+                                <i data-lucide="play-circle" class="w-5 h-5"></i> Assistir Demo
+                            </button>
+                        </div>
+
+                        <div class="absolute bottom-0 left-0 w-full p-6 transition-opacity duration-300 group-hover:opacity-0">
+                            <h4 class="text-lg font-semibold text-white">Template disponível</h4>
+                            <p class="text-sm text-purple-400">Clique para ver detalhes</p>
                         </div>
                     </div>
                 
@@ -119,16 +198,32 @@
             </div>
         </section>
         
-        <section id="sobre" class="py-20">
+        <section id="sobre" class="py-24 border-t border-white/5 bg-gradient-to-b from-[#111111] to-black">
              <div class="container mx-auto px-6">
-                 <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16">
-                     <div class="md:w-1/2">
-                         <img src="FDaction.jpg" alt="Fernando" class="rounded-lg shadow-2xl w-full">
+                 <div class="flex flex-col md:flex-row items-center gap-12 md:gap-20">
+                     <div class="md:w-1/2 relative group">
+                        <div class="absolute -inset-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg opacity-30 blur-lg group-hover:opacity-50 transition-opacity"></div>
+                        <img src="FDaction.jpg" alt="Fernando" class="relative rounded-lg shadow-2xl w-full">
                      </div>
                      <div class="md:w-1/2 text-center md:text-left">
-                         <h3 class="text-center text-xl font-semibold text-white mb-8 md:text-left">Sobre Mim</h3>
-                         <p class="text-lg text-gray-300 mb-4">Atuo como analista de sistemas com foco no ERP TOTVS Protheus. Minha trajetória na tecnologia começou com a programação em C++ enquanto cursava Engenharia de Controle e Automação, ao longo do tempo, expandi minhas habilidades para análise de dados com SQL e desenvolvimento web.</p>
-                         <p class="text-lg text-gray-300">Neste portfólio, reúno projetos e experiências que refletem minha paixão por tecnologia e minha capacidade de transformar necessidades em soluções digitais de qualidade. Seja para apoiar empresas em sua transformação digital ou para criar presença online através de sites institucionais e conteúdos digitais, estou pronto para ajudar a impulsionar e dar vida a suas ideias e negócios.</p>
+                         <h3 class="text-3xl font-bold text-white mb-6">Analista de Sistemas & <br/>Desenvolvedor Web</h3>
+                         <div class="space-y-4 text-gray-300 leading-relaxed">
+                             <p>Atuo como analista de sistemas com foco no ERP <strong>TOTVS Protheus</strong>. Minha trajetória na tecnologia começou com a programação em C++ enquanto cursava Engenharia de Controle e Automação.</p>
+                             <p>Ao longo do tempo, expandi minhas habilidades para análise de dados com <strong>SQL</strong> e desenvolvimento web moderno.</p>
+                             <p>Neste portfólio, reúno projetos que refletem minha paixão por tecnologia. Seja para apoiar empresas em sua transformação digital ou criar presença online, estou pronto para impulsionar suas ideias.</p>
+                         </div>
+                         
+                         <div class="mt-8 flex flex-wrap justify-center md:justify-start gap-4">
+                            <div class="flex items-center gap-2 text-sm text-gray-400 bg-white/5 px-4 py-2 rounded-full border border-white/10">
+                                <i data-lucide="code-2" class="w-4 h-4 text-purple-500"></i> C++ / ADVPL
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-gray-400 bg-white/5 px-4 py-2 rounded-full border border-white/10">
+                                <i data-lucide="database" class="w-4 h-4 text-purple-500"></i> SQL Server
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-gray-400 bg-white/5 px-4 py-2 rounded-full border border-white/10">
+                                <i data-lucide="layout" class="w-4 h-4 text-purple-500"></i> Frontend
+                            </div>
+                         </div>
                      </div>
                  </div>
              </div>
@@ -137,190 +232,170 @@
         <section id="cinto" class="py-20 bg-[#111111]">
             <div class="container mx-auto px-6">
                 
-                <h3 class="text-2xl font-semibold text-center text-white mb-10">Linguagens & Ferramentas</h3>
-                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 mb-16 text-center">
+                <h3 class="text-2xl font-semibold text-center text-white mb-12">Linguagens & Ferramentas</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 mb-20 text-center">
                     
-                    <div class="flex flex-col items-center justify-center p-4 bg-[#1f1f1f] rounded-lg transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-lg hover:shadow-orange-500/20">
-                        <img src="html.png" alt="Logo html" class="w-12 h-12 object-contain">
-                        <span class="mt-2 text-gray-300">HTML5</span>
+                    <div class="group flex flex-col items-center justify-center p-6 bg-[#1f1f1f] rounded-xl border border-white/5 transition-all duration-300 hover:border-orange-500/50 hover:bg-orange-500/10">
+                        <img src="html.png" alt="Logo html" class="w-10 h-10 object-contain mb-3">
+                        <span class="text-sm text-gray-400 group-hover:text-white">HTML5</span>
                     </div>
                     
-                    <div class="flex flex-col items-center justify-center p-4 bg-[#1f1f1f] rounded-lg transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-lg hover:shadow-cyan-500/20">
-                        <img src="tail.png" alt="Logo tailwind" class="w-12 h-12 object-contain">
-                        <span class="mt-2 text-gray-300">Tailwind</span>
+                    <div class="group flex flex-col items-center justify-center p-6 bg-[#1f1f1f] rounded-xl border border-white/5 transition-all duration-300 hover:border-cyan-500/50 hover:bg-cyan-500/10">
+                        <img src="tail.png" alt="Logo tailwind" class="w-10 h-10 object-contain mb-3">
+                        <span class="text-sm text-gray-400 group-hover:text-white">Tailwind</span>
                     </div>
 
-                    <div class="flex flex-col items-center justify-center p-4 bg-[#1f1f1f] rounded-lg transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-lg hover:shadow-yellow-500/20">
-                        <img src="Js.png" alt="Logo JavaScript" class="w-12 h-12 object-contain">
-                        <span class="mt-2 text-gray-300">JavaScript</span>
+                    <div class="group flex flex-col items-center justify-center p-6 bg-[#1f1f1f] rounded-xl border border-white/5 transition-all duration-300 hover:border-yellow-500/50 hover:bg-yellow-500/10">
+                        <img src="Js.png"alt="Logo JavaScript" class="w-10 h-10 object-contain mb-3">
+                        <span class="text-sm text-gray-400 group-hover:text-white">JavaScript</span>
                     </div>
                     
-                    <div class="flex flex-col items-center justify-center p-4 bg-[#1f1f1f] rounded-lg transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-lg hover:shadow-blue-500/20">
-                        <img src="Cpp.png" alt="Logo C++" class="w-12 h-12 object-contain">
-                        <span class="mt-2 text-gray-300">C++</span>
+                    <div class="group flex flex-col items-center justify-center p-6 bg-[#1f1f1f] rounded-xl border border-white/5 transition-all duration-300 hover:border-blue-500/50 hover:bg-blue-500/10">
+                        <img src="cpp.png" alt="Logo C++" class="w-10 h-10 object-contain mb-3">
+                        <span class="text-sm text-gray-400 group-hover:text-white">C++</span>
                     </div>
                     
-                    <div class="flex flex-col items-center justify-center p-4 bg-[#1f1f1f] rounded-lg transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-lg hover:shadow-emerald-500/20">
-                        <img src="database.png" alt="Logo SQL" class="w-12 h-12 object-contain">
-                        <span class="mt-2 text-gray-300">SQL</span>
+                    <div class="group flex flex-col items-center justify-center p-6 bg-[#1f1f1f] rounded-xl border border-white/5 transition-all duration-300 hover:border-emerald-500/50 hover:bg-emerald-500/10">
+                        <img src="database.png" alt="Logo SQL" class="w-10 h-10 object-contain mb-3">
+                        <span class="text-sm text-gray-400 group-hover:text-white">SQL</span>
                     </div>
                      
-                    <div class="flex flex-col items-center justify-center p-4 bg-[#1f1f1f] rounded-lg transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-lg hover:shadow-gray-50/20">
-                        <img src="TOTVS.png" alt="Logo TOTVS" class="w-16 h-16 object-contain">
-                        <span class="mt-2 text-gray-300">Protheus</span>
+                    <div class="group flex flex-col items-center justify-center p-6 bg-[#1f1f1f] rounded-xl border border-white/5 transition-all duration-300 hover:border-blue-300/50 hover:bg-blue-300/10">
+                        <img src="TOTVS.png" alt="Logo TOTVS" class="w-16 h-16 object-contain mb-3">
+                        <span class="text-sm text-gray-400 group-hover:text-white">Protheus</span>
                     </div>
                 </div>
 
-                <h3 class="text-2xl font-semibold text-center text-white mb-10">Certificações</h3>
-                <div class="flex flex-wrap justify-center gap-8">
+                <h3 class="text-xl font-semibold text-center text-white mb-8 opacity-80">Certificações</h3>
+                <div class="flex flex-wrap justify-center gap-6">
                     
-                    <div class="bg-[#1f1f1f] p-6 rounded-lg flex items-center space-x-4 max-w-sm transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-lg hover:shadow-green-500/20">
-                        <i data-lucide="award" class="w-12 h-12 text-green-500 flex-shrink-0"></i>
+                    <div class="bg-[#1a1a1a] border border-white/5 p-5 rounded-lg flex items-center space-x-4 w-full md:w-auto hover:border-purple-500/30 transition-colors">
+                        <div class="bg-purple-500/10 p-2 rounded-lg">
+                            <i data-lucide="award" class="w-12 h-12 text-purple-500"></i>
+                        </div>
                         <div>
                             <h4 class="font-semibold text-white">Basic Frontend</h4>
-                            <p class="text-sm text-gray-100">Descomplica</p>
+                            <p class="text-xs text-gray-400">Descomplica</p>
                         </div>
                     </div>
                     
-                    <div class="bg-[#1f1f1f] p-6 rounded-lg flex items-center space-x-4 max-w-sm transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-lg hover:shadow-green-500/20">
-                         <img src="Cyberchase.png" alt="Logo Cisco" class="w-12 h-12 object-contain flex-shrink-0">
+                    <div class="bg-[#1a1a1a] border border-white/5 p-5 rounded-lg flex items-center space-x-4 w-full md:w-auto hover:border-green-500/30 transition-colors">
+                         <div class="p-2 rounded-lg">
+                             <img src="Cyberchase.png" alt="Logo Cisco" class="w-12 h-12 object-contain">
+                         </div>
                         <div>
-                            <h4 class="font-semibold text-white">Introdução a Cybersegurança</h4>
-                            <p class="text-sm text-gray-100">Cisco Academy</p>
+                            <h4 class="font-semibold text-white">Cybersegurança</h4>
+                            <p class="text-xs text-gray-400">Cisco Academy</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="servicos" class="py-20 bg-[#111111]">
+        <section id="servicos" class="py-24 bg-black relative">
              <div class="container mx-auto px-6">
-                 <h3 class="text-2xl font-semibold text-center text-white mb-10">Serviços</h3>
+                 <div class="text-center mb-16">
+                    <h3 class="text-purple-500 font-semibold tracking-wide uppercase text-sm mb-2">O que faço</h3>
+                    <h3 class="text-3xl font-bold text-white">Soluções Personalizadas</h3>
+                 </div>
+                 
                  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                     <div class="bg-[#1f1f1f] p-8 rounded-lg text-center hover:bg-[#2a2a2a] transition-colors hover:-translate-y-2 transform duration-300">
-                         <i data-lucide="screen-share" class="w-12 h-12 text-purple-500 mx-auto mb-4"></i>
-                         <h3 class="text-xl font-semibold mb-2">Sites Institucionais</h3>
-                         <p class="text-gray-400">Conte a história da sua marca e conecte-se com seu público de forma profissional.</p>
+                     <div class="bg-[#111] p-8 rounded-2xl border border-white/5 hover:border-purple-500/50 transition-all duration-300 group">
+                         <div class="w-14 h-14 bg-[#1a1a1a] rounded-xl flex items-center justify-center mb-6 group-hover:bg-purple-500/20 transition-colors">
+                            <i data-lucide="monitor-smartphone" class="w-7 h-7 text-purple-500 group-hover:text-purple-400"></i>
+                         </div>
+                         <h3 class="text-xl font-bold mb-3 text-white">Sites Institucionais</h3>
+                         <p class="text-gray-400 text-sm leading-relaxed">Desenvolvimento de sites responsivos e otimizados que contam a história da sua marca e conectam você ao seu público.</p>
                      </div>
-                     <div class="bg-[#1f1f1f] p-8 rounded-lg text-center hover:bg-[#2a2a2a] transition-colors hover:-translate-y-2 transform duration-300">
-                         <i data-lucide="router" class="w-12 h-12 text-purple-500 mx-auto mb-4"></i>
-                         <h3 class="text-xl font-semibold mb-2">Presença Digital</h3>
-                         <p class="text-gray-400">Criação de Posts para o linkedin, pensando em engajamento e alcance.</p>
-                     </div>
-                     <div class="bg-[#1f1f1f] p-8 rounded-lg text-center hover:bg-[#2a2a2a] transition-colors hover:-translate-y-2 transform duration-300">
-                           <i data-lucide="folder-git-2" class="w-12 h-12 text-purple-500 mx-auto mb-4"></i>
-                         <h3 class="text-xl font-semibold mb-2">Digitalização de processos</h3>
-                         <p class="text-gray-400">Apresento e te ajudo com ferramentas que otimizam suas tarefas no dia-dia.</p>
-                     </div>
-             </div>
-        </section>
-
-        <!--<section id="depoimentos" class="py-20 bg-[#111111]">
-             <div class="container mx-auto px-6">
-                 <h2 class="section-title">Recomendações...</h2>
-                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
                      
-                     <div class="bg-[#1f1f1f] p-8 rounded-lg flex flex-col h-full">
-                         <p class="text-gray-300 italic flex-grow">"Quero deixar registrado o quanto fiquei impressionado com o design criado para o meu site. O trabalho do Fernando ficou incrível, muito intuitivo, moderno e exatamente o que eu precisava. Recomendo demais o trabalho e estou muito satisfeito com o resultado final."</p>
-                         <div>
-                            <p class="mt-4 font-semibold text-purple-500">Ailton Alcântara</p>
-                            <p class="text-sm text-gray-500">CEO, Via Trajeto</p>
+                     <div class="bg-[#111] p-8 rounded-2xl border border-white/5 hover:border-purple-500/50 transition-all duration-300 group">
+                         <div class="w-14 h-14 bg-[#1a1a1a] rounded-xl flex items-center justify-center mb-6 group-hover:bg-purple-500/20 transition-colors">
+                            <i data-lucide="share-2" class="w-7 h-7 text-purple-500 group-hover:text-purple-400"></i>
                          </div>
+                         <h3 class="text-xl font-bold mb-3 text-white">Presença Digital</h3>
+                         <p class="text-gray-400 text-sm leading-relaxed">Estratégias para redes sociais, com criação de posts focados no LinkedIn para aumentar seu engajamento profissional.</p>
                      </div>
-                      
-                      <div class="bg-[#1f1f1f] p-8 rounded-lg flex flex-col h-full">
-                         <p class="text-gray-300 italic flex-grow">"Contratamos o Fernando para as fotos do nosso evento e não poderíamos estar mais felizes. Cada foto conta um pedaço da nossa história com muita emoção."</p>
-                         <div>
-                            <p class="mt-4 font-semibold text-purple-500">Pedro & Júlia</p>
-                            <p class="text-sm text-gray-500">Clientes</p>
-                         </div>
+                     
+                     <div class="bg-[#111] p-8 rounded-2xl border border-white/5 hover:border-purple-500/50 transition-all duration-300 group">
+                           <div class="w-14 h-14 bg-[#1a1a1a] rounded-xl flex items-center justify-center mb-6 group-hover:bg-purple-500/20 transition-colors">
+                            <i data-lucide="cpu" class="w-7 h-7 text-purple-500 group-hover:text-purple-400"></i>
+                           </div>
+                         <h3 class="text-xl font-bold mb-3 text-white">Digitalização</h3>
+                         <p class="text-gray-400 text-sm leading-relaxed">Consultoria para ferramentas que otimizam suas tarefas diárias, trazendo eficiência tecnológica para o seu negócio.</p>
                      </div>
-                      
-                      <div class="bg-[#1f1f1f] p-8 rounded-lg flex flex-col h-full">
-                         <p class="text-gray-300 italic flex-grow">"Trabalho impecável, desde o planejamento até a entrega final. O Fernando é super profissional, criativo e entregou um material que superou as expectativas."</p>
-                         <div>
-                            <p class="mt-4 font-semibold text-purple-500">Rafael Lima</p>
-                            <p class="text-sm text-gray-500">Diretor de Marketing, VesteBem</p>
-                        </div>
-                     </div>
-
-                 </div>
-
-                 <div class="mt-16">
-                     <h3 class="text-center text-xl font-semibold text-white mb-8">Empresas que confiam no meu trabalho</h3>
-                     <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-                           <img src="https://placehold.co/150x50/e5e5e5/111111?text=InovaTech" alt="Logo InovaTech" class="h-8 grayscale hover:grayscale-0 transition duration-300">
-                           <img src="https://placehold.co/150x50/e5e5e5/111111?text=VesteBem" alt="Logo VesteBem" class="h-8 grayscale hover:grayscale-0 transition duration-300">
-                           <img src="https://placehold.co/150x50/e5e5e5/111111?text=Gourmet%26Cia" alt="Logo Gourmet&Cia" class="h-8 grayscale hover:grayscale-0 transition duration-300">
-                           <img src="https://placehold.co/150x50/e5e5e5/111111?text=Studio+K" alt="Logo Studio K" class="h-8 grayscale hover:grayscale-0 transition duration-300">
-                     </div>
-                 </div>
-             </div>
-        </section>-->
-
-         <section id="contato" class="py-20 bg-[#111111]">
-             <div class="container mx-auto px-6">
-                 <div class="text-center">
-                     <h3 class="text-2xl font-semibold text-center text-white mb-10">Qual o seu projeto?</h3>
-                     <p class="max-w-3xl mx-auto text-lg text-gray-400 mb-12">Estou pronto para ouvir sua ideia e te ajudar a dar o Up digital que seu negócio precisa.</p>
-                 </div>
-                 <div class="max-w-4xl mx-auto bg-[#1f1f1f] p-8 rounded-lg">
-                     <div class="w-full text-center">
-                        <h3 class="text-xl font-semibold mb-4">Canais de Contato</h3>
-                        <a href="mailto:di4s.fernando@gmail.com" class="flex items-center justify-center space-x-3 text-lg mb-4 text-gray-300 hover:text-purple-500 transition-colors">
-                            <i data-lucide="mail" class="w-6 h-6"></i>
-                            <span>di4s.fernando@gmail.com</span>
-                        </a>
-                        <a href="https://wa.me/5531986407976" target="_blank" class="flex items-center justify-center space-x-3 text-lg mb-6 text-gray-300 hover:text-purple-500 transition-colors">
-                              <i data-lucide="phone" class="w-6 h-6"></i>
-                            <span>(31) 98640-7976</span>
-                        </a>
-                        <h3 class="text-xl font-semibold mb-4 mt-8">Siga-me</h3>
-                        <div class="flex space-x-6 justify-center">
-                             <a href="https://www.linkedin.com/in/fernando-di4s/" target="_blank" class="text-gray-400 hover:text-purple-500 transition-colors"><i data-lucide="linkedin" class="w-8 h-8"></i></a>
-                        </div>
-                   </div>
-                 </div>
              </div>
         </section>
+
+         <section id="contato" class="py-24 bg-[#111111]">
+             <div class="container mx-auto px-6">
+                 <div class="bg-gradient-to-br from-[#1f1f1f] to-black p-8 md:p-12 rounded-3xl border border-white/5 flex flex-col md:flex-row items-center justify-center gap-10">
+                     
+                     <div class="md:w-1/2">
+                         <h3 class="text-3xl font-bold text-center text-white mb-4">Vamos tirar seu projeto do papel?</h3>
+                         <p class="text-gray-400 text-center mb-8 text-lg">Estou pronto para ouvir sua ideia e te ajudar a dar o Up digital que seu negócio precisa.</p>
+                         
+                         <div class="flex flex-col space-y-4">
+                            <a href="mailto:di4s.fernando@gmail.com" class="flex items-center space-x-4 text-gray-300 hover:text-white transition-colors p-4 rounded-xl bg-white/5 hover:bg-white/10">
+                                <div class="bg-purple-500/20 p-3 rounded-full">
+                                    <i data-lucide="mail" class="w-5 h-5 text-purple-400"></i>
+                                </div>
+                                <span class="font-medium">di4s.fernando@gmail.com</span>
+                            </a>
+                            <a href="https://wa.me/5531986407976" target="_blank" class="flex items-center space-x-4 text-gray-300 hover:text-white transition-colors p-4 rounded-xl bg-white/5 hover:bg-white/10">
+                                <div class="bg-green-600/20 p-3 rounded-full">
+                                    <i data-lucide="phone" class="w-5 h-5 text-green-400"></i>
+                                </div>
+                                <span class="font-medium">WhatsApp</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/fernando-di4s/" target="_blank" class="flex items-center space-x-4 text-gray-300 hover:text-white transition-colors p-4 rounded-xl bg-white/5 hover:bg-white/10">
+                                <div class="bg-blue-600/40 p-3 rounded-full">
+                                    <i data-lucide="linkedin" class="w-5 h-5"></i>
+                                </div>
+                                <span class="font-medium">Perfil no LinkedIn</span>
+                            </a>
+                         </div>
+                     </div>
+
+                 </div>
+             </div>
+         </section>
     </main>
 
-    <footer class="py-8 bg-black">
-        <div class="container mx-auto px-6 text-center text-gray-500">
-            <p>&copy; 2025 FD Tech | Fernando Dias. Todos os direitos reservados.</p>
+    <footer class="py-8 bg-black border-t border-white/10">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-center items-center text-sm text-gray-500">
+            <p>&copy; 2025 FD Tech | Fernando Dias.</p>
         </div>
     </footer>
     
     <div id="portfolio-modal" class="modal-backdrop hidden opacity-0" onclick="closeModal()">
         <div id="modal-content" class="relative bg-black p-2 rounded-lg max-w-4xl w-11/12" onclick="event.stopPropagation()">
             </div>
-        <button class="absolute top-4 right-4 text-white text-4xl" onclick="closeModal()">&times;</button>
+        <button class="absolute top-4 right-4 text-white text-4xl hover:text-purple-500 transition-colors" onclick="closeModal()">&times;</button>
     </div>
 
 
     <script>
         lucide.createIcons();
 
-        const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('py-2');
-                header.classList.remove('py-4');
-            } else {
-                header.classList.add('py-4');
-                header.classList.remove('py-2');
-            }
-        });
-
+        // Menu Mobile Toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         const menuOpenIcon = document.getElementById('menu-open-icon');
         const menuCloseIcon = document.getElementById('menu-close-icon');
+
         mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            menuOpenIcon.classList.toggle('hidden');
-            menuCloseIcon.classList.toggle('hidden');
+            const isHidden = mobileMenu.classList.contains('hidden');
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                menuOpenIcon.classList.add('hidden');
+                menuCloseIcon.classList.remove('hidden');
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuOpenIcon.classList.remove('hidden');
+                menuCloseIcon.classList.add('hidden');
+            }
         });
+
         document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
@@ -329,39 +404,47 @@
             });
         });
 
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-lg', 'bg-black/90');
+                header.classList.remove('py-4');
+                header.classList.add('py-2');
+            } else {
+                header.classList.remove('shadow-lg', 'bg-black/90');
+                header.classList.remove('py-2');
+                header.classList.add('py-4');
+            }
+        });
+
         function openModal(videoSrc) {
-        
-            document.body.style.overflow = 'hidden'; // Desabilita o scroll 
+            document.body.style.overflow = 'hidden'; 
 
             const modalOverlay = document.createElement('div');
             modalOverlay.id = 'videoModal';
-            modalOverlay.className = 'fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50';
+            modalOverlay.className = 'fixed inset-0 bg-black/95 backdrop-blur-sm flex items-center justify-center z-50 animate-[fadeIn_0.3s_ease-out]';
             
             const videoContainer = document.createElement('div');
-            videoContainer.className = 'relative w-11/12 md:w-3/4 lg:w-2/3 xl:w-1/2 aspect-video';
+            videoContainer.className = 'relative w-11/12 md:w-3/4 lg:w-2/3 xl:w-1/2 aspect-video bg-black rounded-xl overflow-hidden shadow-[0_0_30px_rgba(147,51,234,0.3)] border border-purple-900/30';
 
             const videoPlayer = document.createElement('video');
             videoPlayer.src = videoSrc;
-            videoPlayer.className = 'w-full h-full rounded-lg';
+            videoPlayer.className = 'w-full h-full';
             videoPlayer.controls = true;
             videoPlayer.autoplay = true;
 
-        
             const closeButton = document.createElement('button');
-            closeButton.innerText = '×';
-            closeButton.className = 'absolute -top-8 -right-2 text-white text-5xl font-light';
+            closeButton.innerHTML = '&times;';
+            closeButton.className = 'absolute top-2 right-4 text-white text-4xl font-light hover:text-purple-500 transition-colors z-10';
             
-           
             videoContainer.appendChild(videoPlayer);
             videoContainer.appendChild(closeButton);
             modalOverlay.appendChild(videoContainer);
 
-           
             document.body.appendChild(modalOverlay);
 
             closeButton.onclick = closeModal;
             modalOverlay.addEventListener('click', (event) => {
-                // Fecha somente se o clique for no fundo 
                 if (event.target === modalOverlay) {
                     closeModal();
                 }
@@ -372,7 +455,7 @@
             const modal = document.getElementById('videoModal');
             if (modal) {
                 modal.remove(); 
-                document.body.style.overflow = 'auto'; // Libera o scroll 
+                document.body.style.overflow = 'auto'; 
             }
         }
 
@@ -382,6 +465,5 @@
             }
         });
     </script>
-
 </body>
 </html>
