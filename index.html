@@ -167,32 +167,32 @@
                         </div>
                     </a>
 
-                    <div class="group project-card relative rounded-xl overflow-hidden cursor-pointer border border-white/10 bg-[#1a1a1a]" onclick="openModal('Template.mp4')">
+                    <a href="https://www.ambatividadesaquaticas.com.br" target="_blank" class="group project-card block relative rounded-xl overflow-hidden cursor-pointer border border-white/10 bg-[#1a1a1a]">
                         <div class="aspect-video w-full overflow-hidden relative">
-                            <img src="ForSale.png"  alt="Template For Sale" class="w-full h-full object-cover transition-transform duration-700 ease-out">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+                            <img src="AMB.png" alt="ambnatacao" class="w-full h-full object-cover transition-transform duration-700 ease-out">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
                         </div>
 
                         <div class="absolute top-4 left-4 z-20">
                             <span class="px-3 py-1 text-xs font-medium bg-black/60 backdrop-blur-md border border-white/10 rounded-full text-white">
-                                Landing Page
+                                Institucional / Escola
                             </span>
                         </div>
 
                         <div class="project-overlay absolute inset-0 bg-black/90 backdrop-blur-sm flex flex-col justify-end p-6 translate-y-full transition-transform duration-500 ease-in-out">
-                            <h4 class="text-xl font-bold text-white mb-1">Template a venda</h4>
-                            <p class="text-sm text-gray-400 mb-4 line-clamp-2">Landing page para empresas de prestação de serviços industriais/construção civil.</p>
+                            <h4 class="text-xl font-bold text-white mb-1">AMB Atividades Aquáticas</h4>
+                            <p class="text-sm text-gray-400 mb-4 line-clamp-2">Site da melhor escola de natação de sabará.</p>
 
                             <button class="w-full py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-medium flex items-center justify-center gap-2 transition-colors">
-                                <i data-lucide="play-circle" class="w-5 h-5"></i> Assistir Demo
+                                <i class="w-5 h-5"></i> Visite o Site
                             </button>
                         </div>
 
                         <div class="absolute bottom-0 left-0 w-full p-6 transition-opacity duration-300 group-hover:opacity-0">
-                            <h4 class="text-lg font-semibold text-white">Template disponível</h4>
+                            <h4 class="text-lg font-semibold text-white">AMB Atividades Aquáticas</h4>
                             <p class="text-sm text-purple-400">Clique para ver detalhes</p>
                         </div>
-                    </div>
+                    </a>
                 
                 </div>
             </div>
@@ -417,53 +417,6 @@
             }
         });
 
-        function openModal(videoSrc) {
-            document.body.style.overflow = 'hidden'; 
-
-            const modalOverlay = document.createElement('div');
-            modalOverlay.id = 'videoModal';
-            modalOverlay.className = 'fixed inset-0 bg-black/95 backdrop-blur-sm flex items-center justify-center z-50 animate-[fadeIn_0.3s_ease-out]';
-            
-            const videoContainer = document.createElement('div');
-            videoContainer.className = 'relative w-11/12 md:w-3/4 lg:w-2/3 xl:w-1/2 aspect-video bg-black rounded-xl overflow-hidden shadow-[0_0_30px_rgba(147,51,234,0.3)] border border-purple-900/30';
-
-            const videoPlayer = document.createElement('video');
-            videoPlayer.src = videoSrc;
-            videoPlayer.className = 'w-full h-full';
-            videoPlayer.controls = true;
-            videoPlayer.autoplay = true;
-
-            const closeButton = document.createElement('button');
-            closeButton.innerHTML = '&times;';
-            closeButton.className = 'absolute top-2 right-4 text-white text-4xl font-light hover:text-purple-500 transition-colors z-10';
-            
-            videoContainer.appendChild(videoPlayer);
-            videoContainer.appendChild(closeButton);
-            modalOverlay.appendChild(videoContainer);
-
-            document.body.appendChild(modalOverlay);
-
-            closeButton.onclick = closeModal;
-            modalOverlay.addEventListener('click', (event) => {
-                if (event.target === modalOverlay) {
-                    closeModal();
-                }
-            });
-        }
-
-        function closeModal() {
-            const modal = document.getElementById('videoModal');
-            if (modal) {
-                modal.remove(); 
-                document.body.style.overflow = 'auto'; 
-            }
-        }
-
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape') {
-                closeModal();
-            }
-        });
     </script>
 </body>
 </html>
