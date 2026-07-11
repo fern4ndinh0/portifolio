@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Tech | Fernando Dias</title>
+    <link rel="icon" type="image/png" href="Logo Fernando.png"> 
+    <meta name="description" content="Transformando informações em soluções digitais de impacto para negócios.">
+    <meta name="keywords" content="Dev, desenvolvedor, sites institucionais, Tech, Analista de sistemas, Fernando Dias, FD Tech, soluções digitais">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0a0a0a;
+            color: #e5e5e5;
+        }
+        .hero-bg {
+            background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.9)), url('bgtech1.jpg') no-repeat center center/cover;
+            background-color: #0a0a0a; 
+        }
+        .section-title {
+            @apply text-3xl md:text-4xl font-bold text-center mb-12 relative;
+        }
+        .section-title::after {
+            content: '';
+            @apply block w-20 h-1 bg-purple-500 mx-auto mt-4 rounded;
+        }
+        .modal-backdrop {
+            @apply fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 transition-opacity duration-300;
+        }
+
+        .project-card:hover .project-overlay,
+        .project-card.is-active .project-overlay {
+            transform: translateY(0);
+        }
+        .project-card:hover img,
+        .project-card.is-active img {
+            transform: scale(1.1);
+        }
+        .project-card:hover .card-hint,
+        .project-card.is-active .card-hint {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-purple-500 selection:text-white">
+
+    <header id="header" class="fixed top-0 left-0 right-0 z-40 bg-black bg-opacity-50 backdrop-blur-md transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="flex items-center space-x-2">
+                <img src="Logo Fernando.png" alt="Logo FD Tech" class="w-10 h-10 border-1 border-purple-500 object-cover">
+                <span class="text-xl font-bold tracking-wider">Tech</span>
+            </a>
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <svg id="menu-open-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                <svg id="menu-close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <nav id="desktop-menu" class="hidden md:flex items-center space-x-8">
+                <a href="#portfolio" class="hover:text-purple-500 transition-colors">Portfólio</a>
+                <a href="#sobre" class="hover:text-purple-500 transition-colors">Sobre</a>
+                <a href="#servicos" class="hover:text-purple-500 transition-colors">Serviços</a>
+                <a href="#contato" class="bg-purple-600 px-5 py-2.5 rounded-full hover:bg-purple-700 transition-all hover:shadow-[0_0_20px_rgba(147,51,234,0.3)]">Fale Comigo</a>
+            </nav>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden">
+            <nav class="flex flex-col items-center space-y-4 py-4">
+                <a href="#portfolio" class="hover:text-purple-500 transition-colors">Portfólio</a>
+                <a href="#sobre" class="hover:text-purple-500 transition-colors">Sobre</a>
+                <a href="#servicos" class="hover:text-purple-500 transition-colors">Serviços</a>
+                <a href="#contato" class="bg-purple-600 text-white px-8 py-3 rounded-full font-semibold">Fale Comigo</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="min-h-screen flex items-center justify-center hero-bg relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-[#111111]"></div>
+            
+            <div class="text-center flex flex-col items-center relative z-10 px-4">
+                <div class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-purple-400 uppercase bg-purple-500/10 rounded-full border border-purple-500/20">
+                    Desenvolvimento & Inovação
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-4 bg-clip-text">
+                    Fernando Dias
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-400 max-w-2xl font-light">
+                    Transformando ideias em <span class="text-purple-400 font-normal">soluções digitais</span> de alto impacto.
+                </p>
+                <div class="mt-10 flex gap-4">
+                    <a href="#portfolio" class="bg-white text-black px-8 py-3.5 rounded-lg font-bold hover:bg-gray-200 transition-all hover:scale-105 flex items-center gap-2">
+                        Ver Projetos <i data-lucide="arrow-down" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#contato" class="border border-white/20 text-white px-8 py-3.5 rounded-lg font-semibold hover:bg-white/10 transition-all">
+                        Contato
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="py-24 bg-[#111111] relative">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-16">
+                    <div>
+                        <h3 class="text-purple-500 font-semibold tracking-wide uppercase text-sm mb-2">Portfolio</h3>
+                        <h2 class="text-3xl md:text-4xl font-bold text-white">Trabalhos Recentes</h2>
+                    </div>
+
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <div class="group project-card block relative rounded-xl overflow-hidden cursor-pointer border border-white/10 bg-[#1a1a1a]">
+                        <div class="aspect-video w-full overflow-hidden relative">
+                            <img src="morrovermelho.png" alt="Café Morro Vermelho" class="w-full h-full object-cover transition-transform duration-700 ease-out">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+                        </div>
+
+                        <div class="absolute top-4 left-4 z-20">
+                            <span class="px-3 py-1 text-xs font-medium bg-black/60 backdrop-blur-md border border-white/10 rounded-full text-white">
+                                Produtor
+                            </span>
+                        </div>
+
+                        <div class="project-overlay absolute inset-0 bg-black/90 backdrop-blur-sm flex flex-col justify-end p-6 translate-y-full transition-transform duration-500 ease-in-out">
+                            <h4 class="text-xl font-bold text-white mb-1">Café Morro Vermelho</h4>
+                            <p class="text-sm text-gray-400 mb-4 line-clamp-2">Site para um produtor de café de Caeté.</p>
+
+                            <a href="https://www.cafemorrovermelho.com.br" target="_blank" rel="noopener" class="w-full py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-medium flex items-center justify-center gap-2 transition-colors">
+                                <i class="w-5 h-5"></i> Visite o Site
+                            </a>
+                        </div>
+
+                        <div class="card-hint absolute bottom-0 left-0 w-full p-6 transition-opacity duration-300 pointer-events-none">
+                            <p class="text-sm text-white">Clique para ver detalhes</p>
+                        </div>
+                    </div>
+
+                    <div class="group project-card block relative rounded-xl overflow-hidden cursor-pointer border border-white/10 bg-[#1a1a1a]">
+                        <div class="aspect-video w-full overflow-hidden relative">
+                            <img src="missaorecomeco.png" alt="Missão Recomeço" class="w-full h-full object-cover transition-transform duration-700 ease-out">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+                        </div>
+
+                        <div class="absolute top-4 left-4 z-20">
+                            <span class="px-3 py-1 text-xs font-medium bg-black/60 backdrop-blur-md border border-white/10 rounded-full text-white">
+                                Institucional / Igreja
+                            </span>
+                        </div>
+
+                        <div class="project-overlay absolute inset-0 bg-black/90 backdrop-blur-sm flex flex-col justify-end p-6 translate-y-full transition-transform duration-500 ease-in-out">
+                            <h4 class="text-xl font-bold text-white mb-1">Missão Recomeço</h4>
+                            <p class="text-sm text-gray-400 mb-4 line-clamp-2">Site focado em espalhar a Palavara e o cuidado com os "pequeninos".</p>
+
+                            <a href="https://fern4ndinh0.github.io/Projeto-Recomeco/" target="_blank" rel="noopener" class="w-full py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-medium flex items-center justify-center gap-2 transition-colors">
+                                <i class="w-5 h-5"></i> Visite o Site
+                            </a>
+                        </div>
+
+                        <div class="card-hint absolute bottom-0 left-0 w-full p-6 transition-opacity duration-300 pointer-events-none">
+                            <p class="text-sm text-white">Clique para ver detalhes</p>
+                        </div>
+                    </div>
+
+                    <div class="group project-card block relative rounded-xl overflow-hidden cursor-pointer border border-white/10 bg-[#1a1a1a]">
+                        <div class="aspect-video w-full overflow-hidden relative">
+                            <img src="AMB.png" alt="ambnatacao" class="w-full h-full object-cover transition-transform duration-700 ease-out">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+                        </div>
+
+                        <div class="absolute top-4 left-4 z-20">
+                            <span class="px-3 py-1 text-xs font-medium bg-black/60 backdrop-blur-md border border-white/10 rounded-full text-white">
+                                Institucional / Escola
+                            </span>
+                        </div>
+
+                        <div class="project-overlay absolute inset-0 bg-black/90 backdrop-blur-sm flex flex-col justify-end p-6 translate-y-full transition-transform duration-500 ease-in-out">
+                            <h4 class="text-xl font-bold text-white mb-1">AMB Atividades Aquáticas</h4>
+                            <p class="text-sm text-gray-400 mb-4 line-clamp-2">Site da melhor escola de natação de sabará.</p>
+
+                            <a href="https://www.ambatividadesaquaticas.com.br" target="_blank" rel="noopener" class="w-full py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-medium flex items-center justify-center gap-2 transition-colors">
+                                <i class="w-5 h-5"></i> Visite o Site
+                            </a>
+                        </div>
+
+                        <div class="card-hint absolute bottom-0 left-0 w-full p-6 transition-opacity duration-300 pointer-events-none">
+                            <p class="text-sm text-white">Clique para ver detalhes</p>
+                        </div>
+                    </div>
+                
+                </div>
+            </div>
+        </section>
+        
+        <section id="sobre" class="py-24 border-t border-white/5 bg-gradient-to-b from-[#111111] to-black">
+             <div class="container mx-auto px-6">
+                 <div class="flex flex-col md:flex-row items-center gap-12 md:gap-20">
+                     <div class="md:w-1/2 relative group">
+                        <div class="absolute -inset-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg opacity-30 blur-lg group-hover:opacity-50 transition-opacity"></div>
+                        <img src="FDaction.jpg" alt="Fernando" class="relative rounded-lg shadow-2xl w-full">
+                     </div>
+                     <div class="md:w-1/2 text-center md:text-left">
+                         <h3 class="text-3xl font-bold text-white mb-6">Analista de Dados & <br/>Desenvolvedor Web</h3>
+                         <div class="space-y-4 text-gray-300 leading-relaxed">
+                             <p>Atuo como analista de dados com foco em <strong>ajudar na clareza e estratégia para tomada de decisões</strong>. Minha trajetória na tecnologia começou com a programação em C++ enquanto cursava Engenharia de Controle e Automação.</p>
+                             <p>Ao longo do tempo, expandi minhas habilidades para análise de dados com SQL e <strong>desenvolvimento web<strong>.</p>
+                             <p>Neste portfólio, reúno projetos que refletem minha paixão por tecnologia. Seja para apoiar empresas em sua transformação digital ou criar presença online, estou pronto para impulsionar suas ideias.</p>
+                         </div>
+                         
+                         <div class="mt-8 flex flex-wrap justify-center md:justify-start gap-4">
+                            <div class="flex items-center gap-2 text-sm text-gray-400 bg-white/5 px-4 py-2 rounded-full border border-white/10">
+                                <i data-lucide="code-2" class="w-4 h-4 text-purple-500"></i> C++ / ADVPL
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-gray-400 bg-white/5 px-4 py-2 rounded-full border border-white/10">
+                                <i data-lucide="database" class="w-4 h-4 text-purple-500"></i> SQL Server
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-gray-400 bg-white/5 px-4 py-2 rounded-full border border-white/10">
+                                <i data-lucide="layout" class="w-4 h-4 text-purple-500"></i> Frontend
+                            </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+        </section>
+
+        <section id="cinto" class="py-20 bg-[#111111]">
+            <div class="container mx-auto px-6">
+                
+                <h3 class="text-2xl font-semibold text-center text-white mb-12">Linguagens & Ferramentas</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 mb-20 text-center">
+                    
+                    <div class="group flex flex-col items-center justify-center p-6 bg-[#1f1f1f] rounded-xl border border-white/5 transition-all duration-300 hover:border-orange-500/50 hover:bg-orange-500/10">
+                        <img src="html.png" alt="Logo html" class="w-10 h-10 object-contain mb-3">
+                        <span class="text-sm text-gray-400 group-hover:text-white">HTML5</span>
+                    </div>
+                    
+                    <div class="group flex flex-col items-center justify-center p-6 bg-[#1f1f1f] rounded-xl border border-white/5 transition-all duration-300 hover:border-cyan-500/50 hover:bg-cyan-500/10">
+                        <img src="tail.png" alt="Logo tailwind" class="w-10 h-10 object-contain mb-3">
+                        <span class="text-sm text-gray-400 group-hover:text-white">Tailwind</span>
+                    </div>
+
+                    <div class="group flex flex-col items-center justify-center p-6 bg-[#1f1f1f] rounded-xl border border-white/5 transition-all duration-300 hover:border-yellow-500/50 hover:bg-yellow-500/10">
+                        <img src="Js.png"alt="Logo JavaScript" class="w-10 h-10 object-contain mb-3">
+                        <span class="text-sm text-gray-400 group-hover:text-white">JavaScript</span>
+                    </div>
+                    
+                    <div class="group flex flex-col items-center justify-center p-6 bg-[#1f1f1f] rounded-xl border border-white/5 transition-all duration-300 hover:border-blue-500/50 hover:bg-blue-500/10">
+                        <img src="Cpp.png" alt="Logo C++" class="w-10 h-10 object-contain mb-3">
+                        <span class="text-sm text-gray-400 group-hover:text-white">C++</span>
+                    </div>
+                    
+                    <div class="group flex flex-col items-center justify-center p-6 bg-[#1f1f1f] rounded-xl border border-white/5 transition-all duration-300 hover:border-emerald-500/50 hover:bg-emerald-500/10">
+                        <img src="database.png" alt="Logo SQL" class="w-10 h-10 object-contain mb-3">
+                        <span class="text-sm text-gray-400 group-hover:text-white">SQL</span>
+                    </div>
+                     
+                    <div class="group flex flex-col items-center justify-center p-6 bg-[#1f1f1f] rounded-xl border border-white/5 transition-all duration-300 hover:border-blue-300/50 hover:bg-blue-300/10">
+                        <img src="TOTVS.png" alt="Logo TOTVS" class="w-16 h-16 object-contain mb-3">
+                        <span class="text-sm text-gray-400 group-hover:text-white">Protheus</span>
+                    </div>
+                </div>
+
+                <h3 class="text-xl font-semibold text-center text-white mb-8 opacity-80">Certificações</h3>
+                <div class="flex flex-wrap justify-center gap-6">
+                    
+                    <div class="bg-[#1a1a1a] border border-white/5 p-5 rounded-lg flex items-center space-x-4 w-full md:w-auto hover:border-purple-500/30 transition-colors">
+                        <div class="bg-purple-500/10 p-2 rounded-lg">
+                            <i data-lucide="award" class="w-12 h-12 text-purple-500"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white">Basic Frontend</h4>
+                            <p class="text-xs text-gray-400">Descomplica</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-[#1a1a1a] border border-white/5 p-5 rounded-lg flex items-center space-x-4 w-full md:w-auto hover:border-green-500/30 transition-colors">
+                         <div class="p-2 rounded-lg">
+                             <img src="Cyberchase.png" alt="Logo Cisco" class="w-12 h-12 object-contain">
+                         </div>
+                        <div>
+                            <h4 class="font-semibold text-white">Cybersegurança</h4>
+                            <p class="text-xs text-gray-400">Cisco Academy</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="servicos" class="py-24 bg-black relative">
+             <div class="container mx-auto px-6">
+                 <div class="text-center mb-16">
+                    <h3 class="text-purple-500 font-semibold tracking-wide uppercase text-sm mb-2">O que faço</h3>
+                    <h3 class="text-3xl font-bold text-white">Soluções Personalizadas</h3>
+                 </div>
+                 
+                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                     <div class="bg-[#111] p-8 rounded-2xl border border-white/5 hover:border-purple-500/50 transition-all duration-300 group">
+                         <div class="w-14 h-14 bg-[#1a1a1a] rounded-xl flex items-center justify-center mb-6 group-hover:bg-purple-500/20 transition-colors">
+                            <i data-lucide="monitor-smartphone" class="w-7 h-7 text-purple-500 group-hover:text-purple-400"></i>
+                         </div>
+                         <h3 class="text-xl font-bold mb-3 text-white">Sites Institucionais</h3>
+                         <p class="text-gray-400 text-sm leading-relaxed">Desenvolvimento de sites responsivos e otimizados que contam a história da sua marca e conectam você ao seu público.</p>
+                     </div>
+                     
+                     <div class="bg-[#111] p-8 rounded-2xl border border-white/5 hover:border-purple-500/50 transition-all duration-300 group">
+                         <div class="w-14 h-14 bg-[#1a1a1a] rounded-xl flex items-center justify-center mb-6 group-hover:bg-purple-500/20 transition-colors">
+                            <i data-lucide="share-2" class="w-7 h-7 text-purple-500 group-hover:text-purple-400"></i>
+                         </div>
+                         <h3 class="text-xl font-bold mb-3 text-white">Presença Digital</h3>
+                         <p class="text-gray-400 text-sm leading-relaxed">Estratégias para redes sociais, com criação de posts focados no LinkedIn para aumentar seu engajamento profissional.</p>
+                     </div>
+                     
+                     <div class="bg-[#111] p-8 rounded-2xl border border-white/5 hover:border-purple-500/50 transition-all duration-300 group">
+                           <div class="w-14 h-14 bg-[#1a1a1a] rounded-xl flex items-center justify-center mb-6 group-hover:bg-purple-500/20 transition-colors">
+                            <i data-lucide="cpu" class="w-7 h-7 text-purple-500 group-hover:text-purple-400"></i>
+                           </div>
+                         <h3 class="text-xl font-bold mb-3 text-white">Digitalização</h3>
+                         <p class="text-gray-400 text-sm leading-relaxed">Consultoria para ferramentas que otimizam suas tarefas diárias, trazendo eficiência tecnológica para o seu negócio.</p>
+                     </div>
+             </div>
+        </section>
+
+         <section id="contato" class="py-24 bg-[#111111]">
+             <div class="container mx-auto px-6">
+                 <div class="bg-gradient-to-br from-[#1f1f1f] to-black p-8 md:p-12 rounded-3xl border border-white/5 flex flex-col md:flex-row items-center justify-center gap-10">
+                     
+                     <div class="md:w-1/2">
+                         <h3 class="text-3xl font-bold text-center text-white mb-4">Vamos tirar seu projeto do papel?</h3>
+                         <p class="text-gray-400 text-center mb-8 text-lg">Estou pronto para ouvir sua ideia e te ajudar a dar o Up digital que seu negócio precisa.</p>
+                         
+                         <div class="flex flex-col space-y-4">
+                            <a href="mailto:di4s.fernando@gmail.com" class="flex items-center space-x-4 text-gray-300 hover:text-white transition-colors p-4 rounded-xl bg-white/5 hover:bg-white/10">
+                                <div class="bg-purple-500/20 p-3 rounded-full">
+                                    <i data-lucide="mail" class="w-5 h-5 text-purple-400"></i>
+                                </div>
+                                <span class="font-medium">di4s.fernando@gmail.com</span>
+                            </a>
+                            <a href="https://wa.me/5531986407976" target="_blank" class="flex items-center space-x-4 text-gray-300 hover:text-white transition-colors p-4 rounded-xl bg-white/5 hover:bg-white/10">
+                                <div class="bg-green-600/20 p-3 rounded-full">
+                                    <i data-lucide="phone" class="w-5 h-5 text-green-400"></i>
+                                </div>
+                                <span class="font-medium">WhatsApp</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/fernando-di4s/" target="_blank" class="flex items-center space-x-4 text-gray-300 hover:text-white transition-colors p-4 rounded-xl bg-white/5 hover:bg-white/10">
+                                <div class="bg-blue-600/40 p-3 rounded-full">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
+                                    </svg>
+                                </div>
+                                <span class="font-medium">Perfil no LinkedIn</span>
+                            </a>
+                         </div>
+                     </div>
+
+                 </div>
+             </div>
+         </section>
+    </main>
+
+    <footer class="py-8 bg-black border-t border-white/10">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-center items-center text-sm text-gray-500">
+            <p>&copy; 2025 FD Tech | Fernando Dias.</p>
+        </div>
+    </footer>
+    
+    <div id="portfolio-modal" class="modal-backdrop hidden opacity-0" onclick="closeModal()">
+        <div id="modal-content" class="relative bg-black p-2 rounded-lg max-w-4xl w-11/12" onclick="event.stopPropagation()">
+            </div>
+        <button class="absolute top-4 right-4 text-white text-4xl hover:text-purple-500 transition-colors" onclick="closeModal()">&times;</button>
+    </div>
+
+
+    <script>
+        lucide.createIcons();
+
+        // Menu Mobile Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuOpenIcon = document.getElementById('menu-open-icon');
+        const menuCloseIcon = document.getElementById('menu-close-icon');
+
+        mobileMenuButton.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                menuOpenIcon.classList.add('hidden');
+                menuCloseIcon.classList.remove('hidden');
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuOpenIcon.classList.remove('hidden');
+                menuCloseIcon.classList.add('hidden');
+            }
+        });
+
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuOpenIcon.classList.remove('hidden');
+                menuCloseIcon.classList.add('hidden');
+            });
+        });
+
+        // Portfólio: toque/clique no card revela as infos (sem abrir o site).
+        // Só o botão "Visite o Site" navega.
+        const projectCards = document.querySelectorAll('.project-card');
+        projectCards.forEach(card => {
+            card.addEventListener('click', (e) => {
+                // Se clicou no link "Visite o Site", deixa navegar normalmente.
+                if (e.target.closest('a')) return;
+                // Alterna este card e fecha os demais.
+                projectCards.forEach(c => { if (c !== card) c.classList.remove('is-active'); });
+                card.classList.toggle('is-active');
+            });
+        });
+
+        // Toque fora dos cards fecha o overlay.
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.project-card')) {
+                projectCards.forEach(c => c.classList.remove('is-active'));
+            }
+        });
+
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-lg', 'bg-black/90');
+                header.classList.remove('py-4');
+                header.classList.add('py-2');
+            } else {
+                header.classList.remove('shadow-lg', 'bg-black/90');
+                header.classList.remove('py-2');
+                header.classList.add('py-4');
+            }
+        });
+
+    </script>
+</body>
+</html>
